@@ -1,11 +1,11 @@
 import React from "react";
 import heroBg from "../assets/hero-bg.jpg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
     <div className="relative bg-gray-900 text-white font-sans h-[70vh] md:h-screen overflow-hidden">
-      {/* Animated Background Image */}
       <motion.img
         src={heroBg}
         alt="Solar panels"
@@ -20,10 +20,8 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent z-10" />
 
-      {/* Animated Content */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -38,9 +36,11 @@ const HeroSection = () => {
           peer-to-peer energy sharing between homes — before installation even
           begins.
         </p>
-        <button className="mt-6 sm:mt-8 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-xl text-lg transition shadow-lg">
-          Start Planning
-        </button>
+        <Link to="/dashboard">
+          <button className="mt-6 sm:mt-8 px-5 py-3 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold rounded-xl text-lg transition shadow-lg cursor-pointer hover:text-white">
+            Start Planning
+          </button>
+        </Link>
       </motion.div>
     </div>
   );

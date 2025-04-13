@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -18,15 +19,16 @@ const CTASection = () => {
           Ready to Plan Smarter Solar Sharing?
         </h2>
         <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto mb-8">
-        Don’t just install solar, optimize it!. Start building smarter, connected solar communities with ShadowGrid today.
+          Don’t just install solar, optimize it!. Start building smarter,
+          connected solar communities with ShadowGrid today.
         </p>
 
-        <a
-          href="#how"
+        <Link
+          to="/dashboard"
           className="inline-block px-6 py-3 bg-yellow-400 text-black font-semibold rounded-xl text-base md:text-lg hover:bg-yellow-500 hover:text-white transition duration-300 shadow-md"
         >
           Start Planning Now
-        </a>
+        </Link>
       </motion.div>
     </section>
   );

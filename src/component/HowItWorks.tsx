@@ -8,7 +8,7 @@ import {
 import home from "../assets/home.webp";
 import solar from "../assets/solar.jpeg";
 import p2p from "../assets/p2p-sharing.png";
-import sharing from "../assets/solar-saving.jpg";
+import sharing from "../assets/solar-saving.jpeg";
 import { Map, Sun, House, ChartColumnIncreasing } from "lucide-react";
 
 const steps = [
@@ -103,7 +103,6 @@ const HowItWorks = () => {
               </div>
               <p className="text-sm">{step.text}</p>
 
-              {/* Mobile Image Display */}
               <div className="lg:hidden mt-4">
                 <AnimatePresence>
                   {active === i && (
@@ -124,7 +123,6 @@ const HowItWorks = () => {
           ))}
         </div>
 
-        {/* Desktop Preview */}
         <div className="hidden lg:flex justify-center items-center">
           <AnimatePresence mode="wait">
             <motion.img

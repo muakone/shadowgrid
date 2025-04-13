@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
 import App from '../App'
 import Home from '../pages/Home'
-// import Dashboard from '../pages/Dashboard'
-// import Recommendations from '../pages/Recommendations'
+import Dashboard from '../pages/Dashboard'
+import Recommendation from '../pages/Recommendation'
 // import CaseStudy from '../pages/CaseStudy'
 // import Contact from '../pages/Contact'
 import ErrorPage from '../pages/ErrorPage' 
@@ -20,18 +20,18 @@ const router = createBrowserRouter([
           return { welcomeMessage: 'Welcome to the Home page!' }
         },
       },
-    //   {
-    //     path: 'dashboard',
-    //     element: <Dashboard />,
-    //     loader: async () => {
-    //       // simulate or fetch dashboard data
-    //       return { stats: [1, 2, 3] }
-    //     },
-    //   },
-    //   {
-    //     path: 'recommendations',
-    //     element: <Recommendations />,
-    //   },
+      {
+        path: 'dashboard',
+        element: <Dashboard />,
+        loader: async () => {
+          // simulate or fetch dashboard data
+          return { stats: [1, 2, 3] }
+        },
+      },
+      {
+        path: 'recommendations',
+        element: <Recommendation />,
+      },
     //   {
     //     path: 'case-study',
     //     element: <CaseStudy />,

@@ -7,11 +7,11 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="relative bg-gradient-to-b from-[#0a0a0c] to-[#111113] text-white px-6 md:px-16 py-16 font-sans shadow-inner border-t border-yellow-500/10">
-
       {/* Stylish glowing top divider */}
       <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-yellow-500/10 via-yellow-300/10 to-transparent blur-sm" />
 
@@ -29,10 +29,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold text-yellow-400 mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#dashboard" className="hover:text-yellow-300 transition">Dashboard</a></li>
-            <li><a href="#recommendations" className="hover:text-yellow-300 transition">Recommendations</a></li>
-            <li><a href="#locations" className="hover:text-yellow-300 transition">Case Study</a></li>
-            <li><a href="#about" className="hover:text-yellow-300 transition">About Us</a></li>
+            <li><Link to="/dashboard" className="hover:text-yellow-300 transition">Dashboard</Link></li>
+            <li><Link to="/recommendations" className="hover:text-yellow-300 transition">Recommendations</Link></li>
+            <li><Link to="/download" className="hover:text-yellow-300 transition">Download</Link></li>
+            <li><Link to="/contact" className="hover:text-yellow-300 transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -88,9 +88,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 pt-8 mt-10 border-t border-yellow-400/10">
         <p>© {new Date().getFullYear()} ShadowGrid. All rights reserved.</p>
         <div className="flex gap-4 mt-4 md:mt-0 text-sm">
-          <a href="#" className="hover:text-yellow-300 transition">Privacy Policy</a>
-          <a href="#" className="hover:text-yellow-300 transition">Terms of Service</a>
-          <a href="#" className="hover:text-yellow-300 transition">FAQ</a>
+          <Link to="/privacy" className="hover:text-yellow-300 transition">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-yellow-300 transition">Terms of Service</Link>
+          <Link to="/faq" className="hover:text-yellow-300 transition">FAQ</Link>
         </div>
       </div>
     </footer>
