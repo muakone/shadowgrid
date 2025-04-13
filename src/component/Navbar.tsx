@@ -19,7 +19,6 @@ const Navbar = () => {
     <>
       <nav className="bg-gray-950/90 backdrop-blur-sm shadow-md text-white sticky top-0 z-50 font-sans">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img src={Logo} alt="ShadowGrid Logo" className="w-10 h-10 object-contain" />
             <div className="flex flex-col leading-tight">
@@ -28,7 +27,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
             <li><Link to="/dashboard" className="hover:text-yellow-400 transition">Dashboard</Link></li>
             <li><Link to="/recommendations" className="hover:text-yellow-400 transition">Recommendations</Link></li>
@@ -36,7 +34,6 @@ const Navbar = () => {
             <li><Link to="/contact" className="hover:text-yellow-400 transition">Contact</Link></li>
           </ul>
 
-          {/* Mobile Menu Icon */}
           <div className="md:hidden">
             <button onClick={() => setIsOpen(true)} className="text-yellow-400 hover:text-white text-2xl transition">
               <Menu />
@@ -48,7 +45,6 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               className="fixed inset-0 z-40 bg-black/50"
               onClick={() => setIsOpen(false)}
@@ -57,8 +53,6 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             />
-
-            {/* Sidebar */}
             <motion.div
               className="fixed top-0 right-0 w-64 h-full bg-gray-950 text-white z-50 shadow-xl"
               initial={{ x: '100%' }}

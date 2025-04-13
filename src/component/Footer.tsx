@@ -11,13 +11,12 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-b from-[#0a0a0c] to-[#111113] text-white px-6 md:px-16 py-16 font-sans shadow-inner border-t border-yellow-500/10">
+    <footer className="relative bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white px-6 md:px-16 py-16 font-sans shadow-inner border-t border-yellow-500/10">
       {/* Stylish glowing top divider */}
-      <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-yellow-500/10 via-yellow-300/10 to-transparent blur-sm" />
+      {/* <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-yellow-500/10 via-yellow-300/10 to-transparent blur-sm" /> */}
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 pb-12 relative z-10">
-        {/* About */}
         <div>
           <h3 className="text-lg font-bold text-yellow-400 mb-3">About ShadowGrid</h3>
           <p className="text-sm text-gray-400 leading-relaxed">
@@ -25,7 +24,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-bold text-yellow-400 mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
@@ -36,7 +34,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h3 className="text-lg font-bold text-yellow-400 mb-3">Contact Us</h3>
           <ul className="space-y-3 text-sm text-gray-400">
@@ -55,7 +52,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Social + Store Buttons */}
         <div>
           <h3 className="text-lg font-bold text-yellow-400 mb-3">Connect With Us</h3>
           <div className="flex gap-5 text-yellow-400 mb-4">
@@ -84,7 +80,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 pt-8 mt-10 border-t border-yellow-400/10">
         <p>© {new Date().getFullYear()} ShadowGrid. All rights reserved.</p>
         <div className="flex gap-4 mt-4 md:mt-0 text-sm">

@@ -5,6 +5,7 @@ import HowItWorks from '../component/HowItWorks';
 import WhyShadowGrid from '../component/WhyShadowGrid';
 import CTASection from '../component/Cta';
 import ScrollToTop from '../component/ScrollToTop';
+import FaqSection from '../component/Faq';
 
 const Home = () => {
   const { welcomeMessage } = useLoaderData() as { welcomeMessage: string };
@@ -17,6 +18,7 @@ const Home = () => {
         <HowItWorks />
         <WhyShadowGrid />
         <CTASection />
+        <FaqSection />
         <ScrollToTop />
       </Suspense>
     </section>
