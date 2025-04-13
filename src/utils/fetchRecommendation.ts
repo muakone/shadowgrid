@@ -1,7 +1,7 @@
 export const getRecommendations = async () => {
     const homes = JSON.parse(localStorage.getItem("simulationResult") || "[]");
   
-    const response = await fetch("http://localhost:5000/api/recommendations", {
+    const response = await fetch("https://shadow-grid-backend.onrender.com/api/recommendations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(homes),

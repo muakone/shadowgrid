@@ -2,7 +2,7 @@ import { HomeInput } from "../types/Home";
 
 export const SendToSimulationApi = async (home: HomeInput[]) => {
     try {
-      const response = await fetch("http://localhost:5000/api/simulate", {
+      const response = await fetch("https://shadow-grid-backend.onrender.com/api/simulate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
