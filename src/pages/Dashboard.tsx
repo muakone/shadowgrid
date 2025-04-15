@@ -15,7 +15,9 @@ const Dashboard = () => {
     name: "",
     panelSize: "",
     orientation: "South",
+    dailyConsumption: "",
   });
+  
   const [simulationRun, setSimulationRun] = useState(false);
 
   useEffect(() => {
@@ -28,14 +30,22 @@ const Dashboard = () => {
 
   const handleFormSubmit = () => {
     const newHome = {
-      ...form,
-      panelSize: Number(form.panelSize),
+      name: form.name,
+      orientation: form.orientation as "North" | "South" | "East" | "West",
       latlng: clickedCoord,
+      dailyConsumption: parseFloat(form.dailyConsumption),
     };
+  
     setHomes((prev) => [...prev, newHome]);
-    setForm({ name: "", panelSize: "", orientation: "South" });
+    setForm({
+      name: "",
+      panelSize: "",
+      orientation: "South",
+      dailyConsumption: "",
+    });
     setClickedCoord(null);
   };
+  
 
   const runSimulation = async () => {
     setLoading(true);

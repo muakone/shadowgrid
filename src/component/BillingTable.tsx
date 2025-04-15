@@ -1,6 +1,6 @@
 const BillingTable = ({ data }: { data: any[] }) => {
   return (
-    <div className="overflow-auto max-h-[400px] rounded-lg border border-gray-800 mt-4">
+    <div className="overflow-x-auto md:overflow-y-hidden overflow-y-auto max-h-[420px] rounded-lg border border-gray-800 mt-4">
       <table className="w-full min-w-[600px] text-sm">
         <thead className="text-yellow-300 text-left bg-gray-900 sticky top-0 z-10">
           <tr>

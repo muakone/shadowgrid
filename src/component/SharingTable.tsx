@@ -7,7 +7,7 @@ const SharingTable = ({ data }) => (
       <Link className="text-yellow-400 w-4 h-4" /> Energy Distribution Table
     </h2>
 
-    <div className="overflow-auto max-h-[400px]">
+    <div className="overflow-x-auto md:overflow-y-hidden overflow-y-auto max-h-[420px]">
       <table className="w-full min-w-[500px] text-sm">
         <thead className="text-gray-400 text-left border-b border-gray-700 sticky top-0 bg-gray-900 z-10">
           <tr>

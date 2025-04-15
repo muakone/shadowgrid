@@ -6,6 +6,7 @@ import { Download } from "lucide-react";
 import { downloadBillingAsPDF } from "../component/ExportBilling";
 import BillingSummaryBox from "../component/BillingSummaryBox";
 import SmartSuggestionsBox from "../component/SmartSuggestion";
+import { Link } from "react-router-dom";
 
 const BillingPage = () => {
   const [filter, setFilter] = useState<"daily" | "weekly" | "monthly">("daily");
@@ -22,6 +23,8 @@ const BillingPage = () => {
   useEffect(() => {
     fetchBilling();
   }, [filter]);
+
+  const noData = !loading && (!data || data.length === 0);
 
   return (
     <main className="min-h-screen bg-gray-950 text-white px-6 py-10 font-sans">
@@ -40,11 +43,25 @@ const BillingPage = () => {
 
       {loading ? (
         <p className="text-gray-400 mt-6">Loading billing data...</p>
+      ) : noData ? (
+        <div className="mt-10 text-center text-gray-400 bg-gray-800 border border-gray-700 p-6 rounded-lg">
+          <p className="mb-3">
+           No billing data found. You need to run a simulation first.
+          </p>
+          <Link
+            to="/dashboard"
+            className="inline-block px-4 py-2 bg-yellow-400 text-black font-semibold rounded-md text-sm hover:bg-yellow-500 hover:text-white transition"
+          >
+            Go to Dashboard
+          </Link>
+        </div>
       ) : (
-        <BillingTable data={data} />
+        <>
+          <BillingTable data={data} />
+          <BillingSummaryBox data={data} />
+          <SmartSuggestionsBox data={data} />
+        </>
       )}
-      <BillingSummaryBox data={data} />
-      <SmartSuggestionsBox data={data} />
     </main>
   );
 };
