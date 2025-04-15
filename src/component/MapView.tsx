@@ -96,21 +96,22 @@ const MapView = ({
       </MapContainer>
 
       {!simulationRun && homes.length > 0 && (
-        <div className="absolute bottom-6 left-6 z-30">
-          <button
-            onClick={runSimulation}
-            disabled={loading}
-            className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl shadow-lg transition cursor-pointer"
-          >
-            {loading ? (
-              <Loader className="w-4 h-4 animate-spin" />
-            ) : (
-              <Bolt className="w-5 h-5" />
-            )}
-            {loading ? "Simulating..." : "Run Simulation"}
-          </button>
-        </div>
+  <div className="absolute bottom-6 left-6 md:top-6 md:right-6 md:left-auto z-30">
+    <button
+      onClick={runSimulation}
+      disabled={loading}
+      className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-5 py-2 rounded-xl shadow-lg transition cursor-pointer"
+    >
+      {loading ? (
+        <Loader className="w-4 h-4 animate-spin" />
+      ) : (
+        <Bolt className="w-5 h-5" />
       )}
+      {loading ? "Simulating..." : "Run Simulation"}
+    </button>
+  </div>
+)}
+
     </section>
   );
 };

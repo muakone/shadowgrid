@@ -54,7 +54,7 @@ const Dashboard = () => {
 
   return (
     <main className="flex h-screen overflow-hidden bg-gray-950 text-white font-sans">
-      <HomeSidebar homes={homes} />
+      <HomeSidebar homes={homes} simulationRun={simulationRun} />
       <MapView
         homes={homes}
         onMapClick={handleMapClick}

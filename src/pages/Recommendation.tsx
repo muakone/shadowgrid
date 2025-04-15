@@ -3,6 +3,7 @@ import SharingTable from "../component/SharingTable";
 import SuggestionBox from "../component/SuggestionNotice";
 import { getRecommendations } from "../utils/fetchRecommendation";
 import { Bolt } from "lucide-react";
+import ExportCSVButton from "../component/ExportCsv";
 
 const RecommendationsPage = () => {
   const [data, setData] = useState([]);
@@ -27,6 +28,7 @@ const RecommendationsPage = () => {
         <p className="text-gray-400">Loading recommendations...</p>
       ) : (
         <>
+          <ExportCSVButton data={data} />
           <SharingTable data={data} />
           <SuggestionBox recommendations={data} />
         </>

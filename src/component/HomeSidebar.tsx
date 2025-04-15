@@ -2,13 +2,20 @@ import React from "react";
 import { Home, Eye, Sun } from "lucide-react";
 import { HomeResult } from "../types/Home";
 
-const HomeSidebar = ({ homes }: { homes: HomeResult[] }) => {
+const HomeSidebar = ({
+  homes,
+  simulationRun,
+}: {
+  homes: HomeResult[];
+  simulationRun: boolean;
+}) => {
   return (
     <aside className="hidden md:block w-[320px] bg-gray-900 border-l border-gray-800 p-6 overflow-y-auto">
       <div className="flex items-center gap-2 mb-4 ml-12">
         <Home className="text-yellow-400 w-5 h-5" />
         <h2 className="text-yellow-400 text-xl font-bold">Homes Added</h2>
       </div>
+
       <ul className="space-y-3">
         {homes.map((home, i) => (
           <li
@@ -20,7 +27,7 @@ const HomeSidebar = ({ homes }: { homes: HomeResult[] }) => {
             </div>
 
             <p className="text-xs text-gray-400">
-              {home.panelSize ? `PanelSize: ${home.panelSize}kW – ` : ""}
+              {home.panelSize ? `Panel: ${home.panelSize}kW – ` : ""}
               {home.orientation}
             </p>
 
@@ -28,10 +35,24 @@ const HomeSidebar = ({ homes }: { homes: HomeResult[] }) => {
               Daily Use: {home.dailyConsumption} kWh/day
             </p>
 
-            {home.production !== undefined && (
-              <p className="text-xs text-gray-400">
-                Power Supplied: {home.production} kWh/day
-              </p>
+            {simulationRun && (
+              <>
+                <p className="text-xs text-gray-400">
+                  Power Received: {home.production} kWh/day
+                </p>
+
+                <p className="text-xs text-gray-400">
+                  Estimated Bill: ₦{(home.production * 500).toFixed(2)}
+                </p>
+
+                <p
+                  className={`text-xs ${
+                    home.netEnergy < 0 ? "text-red-400" : "text-green-400"
+                  }`}
+                >
+                  Net Energy: {home.netEnergy} kWh
+                </p>
+              </>
             )}
 
             {home.role && (

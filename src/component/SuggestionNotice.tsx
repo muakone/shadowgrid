@@ -15,8 +15,8 @@ const SuggestionBox = ({ recommendations }) => {
   }
 
   return (
-    <div className="bg-gray-900 border border-gray-800 p-6 rounded-xl">
-      <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
+    <div className="bg-gray-900 border border-gray-800 px-4 sm:px-6 py-6 rounded-xl">
+      <h2 className="text-lg sm:text-xl font-semibold text-white mb-4 flex items-center gap-2">
         <MessageSquare className="w-5 h-5 text-yellow-400" /> Suggestions
       </h2>
       <ul className="list-disc list-inside text-gray-300 space-y-2">

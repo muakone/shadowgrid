@@ -6,6 +6,7 @@ import Recommendation from '../pages/Recommendation'
 // import CaseStudy from '../pages/CaseStudy'
 // import Contact from '../pages/Contact'
 import ErrorPage from '../pages/ErrorPage' 
+import BillingPage from '../pages/BillingPage'
 
 const router = createBrowserRouter([
   {
@@ -32,10 +33,10 @@ const router = createBrowserRouter([
         path: 'recommendations',
         element: <Recommendation />,
       },
-    //   {
-    //     path: 'case-study',
-    //     element: <CaseStudy />,
-    //   },
+      {
+        path: 'billing',
+        element: <BillingPage />,
+      },
     //   {
     //     path: 'contact',
     //     element: <Contact />,
