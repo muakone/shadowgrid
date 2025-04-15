@@ -1,4 +1,4 @@
-const isLive = false;
+const isLive = true;
 
 export const BASE_URL = isLive
   ? "https://shadow-grid-backend.onrender.com/api"
